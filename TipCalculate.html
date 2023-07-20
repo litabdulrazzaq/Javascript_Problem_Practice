@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calcualate</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const calTip = (bill) => {
+        return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+    }
+        let bills = [125, 555, 44];
+        console.warn(" Bills: "+bills)
+        console.log(" Tip: "+ [calTip(bills[0]), calTip(bills[1]), calTip(bills[2])])
+        const total = [calTip(bills[0])+bills[0], calTip(bills[1]) + bills[1], calTip(bills[2]) + bills[2]]
+        console.log("Total: "+ [total])
+</script>
+
+</html>

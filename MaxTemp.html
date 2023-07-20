@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Tempreture</title>
+    <script defer>
+        const data1 = [17, 21, 23];
+        const data2 = [8, 4, -3, 15];
+        console.log(`...${data1[0]}°C in Day 1 ...${data1[1]}°C in Day 2 ...${data1[2]}°C in Day 3`);
+        const forecastTemp = function (arr) {
+            let str = '';
+            for (let i = 0; i < arr.length; i++) {
+                str = str + `...${data1[i]}°C in Day ${i + 1} `;
+            }
+            console.log(str);
+        };
+
+        forecastTemp(data1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
