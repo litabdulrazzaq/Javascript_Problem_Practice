@@ -1,30 +1,30 @@
-"use strict";
+'use strict';
 
-const model = document.querySelector(".model");
-const overlay = document.querySelector(".overlay");
-const btnCloseModel = document.querySelector(".close-model");
-const btnOpenModel = document.querySelectorAll(".show-model");
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
 
-for (let i = 0; i < btnOpenModel.length; i++) {
-  btnOpenModel[i].addEventListener("click", function () {
-    model.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  });
-}
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
 
-// btnCloseModel.addEventListener("click", function () {
-//   model.classList.add("hidden");
-//   overlay.classList.add("hidden");
-// });
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
 
-overlay.addEventListener("click", function () {
-  model.classList.add("hidden");
-  overlay.classList.add("hidden");
-});
+for (let i = 0; i < btnsOpenModal.length; i++)
+  btnsOpenModal[i].addEventListener('click', openModal);
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !model.classList.contains("hidden")) {
-    model.classList.add("hidden");
-    overlay.classList.add("hidden");
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  // console.log(e.key);
+
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
   }
 });
